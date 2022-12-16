@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Travel By Country</title>
+  </head>
+  <body>
+    <div id="loader" class="loader">
+      <svg
+        width="140"
+        height="140"
+        viewBox="0 0 280 280"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g>
+          <line
+            x1="59.9833"
+            y1="140.333"
+            x2="219.978"
+            y2="139"
+            stroke="#000"
+            stroke-width="4"
+          />
+          <circle cx="60" cy="140" r="5" fill="#000" />
+          <circle cx="220" cy="139" r="5" fill="#000" />
+        </g>
+        <path
+          class="circle"
+          d="M109.957 122.655L140 105.309L170.043 122.655V157.345L140 174.691L109.957 157.345V122.655Z"
+          stroke="#000"
+          stroke-width="4"
+        />
+        <circle
+          class="circle"
+          cx="140"
+          cy="140"
+          r="13"
+          stroke="#f5d77b"
+          stroke-width="4"
+        />
+        <circle
+          class="circle"
+          cx="110"
+          cy="192"
+          r="13"
+          stroke="#f7a78f"
+          stroke-width="4"
+        />
+        <circle
+          class="circle circle_s"
+          cx="85"
+          cy="232"
+          r="8"
+          stroke="#82c7c5"
+          stroke-width="4"
+        />
+        <circle
+          class="circle"
+          cx="170"
+          cy="88"
+          r="13"
+          stroke="#82c7c5"
+          stroke-width="4"
+        />
+        <circle
+          class="circle circle_s"
+          cx="110"
+          cy="192"
+          r="5"
+          fill="#f7a78f"
+        />
+        <circle class="circle circle_s" cx="185" cy="61" r="5" fill="#f5d77b" />
+      </svg>
+    </div>
+    <div id="modal" class="modal">
+      <div id="login_modal" class="login_modal">
+        <h3>Sign In</h3>
+        <div class="login_modal-form">
+          <input type="text" placeholder="Email" />
+          <input type="text" placeholder="Password" />
+          <button class="signup-btn">SIGN UP</button>
+          <p>or sign in with</p>
+          <button class="google_signup-btn">
+            <img src="./img/google.png" />Google
+          </button>
+        </div>
+        <p id="close_modal-btn" class="close_modal-btn">x</p>
+      </div>
+    </div>
+    <div class="hero">
+      <nav>
+        <h2>CBT</h2>
+        <ul>
+          <li>HOME</li>
+          <li>ABOUT US</li>
+          <li>CONTACTS</li>
+        </ul>
+        <p id="sign-btn">SIGN IN</p>
+      </nav>
+      <div class="hero__content">
+        <h1>Travel By Country</h1>
+        <h2>Enjoy our services for your trip anywhere and anytime</h2>
+        <div class="hero__content--searchbar">
+          <div id="filter" class="filter">
+            <p id="filter_text">Filtra</p>
+            <div id="dropdown" class="dropdown inactive">
+              <ul>
+                <li id="filter_city">Città</li>
+                <li id="filter_description">Descrizione</li>
+                <li id="filter_all">Tutto</li>
+              </ul>
+            </div>
+          </div>
+          <input
+            id="searchbar"
+            class="searchbar"
+            type="txt"
+            placeholder="Cerca una localita'..."
+          />
+          <button id="search-btn" class="search-btn" type="submit">
+            <img src="./img/search.png" alt="" srcset="" />
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="page_content">
+      <div id="result_main_container" class="result_main_container">
+        <h1 id="res_title"></h1>
+        <div id="result_container" class="result_container"></div>
+      </div>
+      <h1>Le mete d'Europa più gettonate</h1>
+      <p>
+        Scegli tra le migliori citta' d'Europa, ricche di storia e di
+        divertimento.
+      </p>
+      <div class="destionations_container">
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Francia</h2>
+            <div class="scroll_btn_container">
+              <button id="fr_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="fr_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="fr_dest" class="dest-container"></div>
+        </div>
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Italia</h2>
+            <div class="scroll_btn_container">
+              <button id="it_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="it_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="it_dest" class="dest-container"></div>
+        </div>
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Portogallo</h2>
+            <div class="scroll_btn_container">
+              <button id="pt_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="pt_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="pt_dest" class="dest-container"></div>
+        </div>
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Spagna</h2>
+            <div class="scroll_btn_container">
+              <button id="es_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="es_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="es_dest" class="dest-container"></div>
+        </div>
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Grecia</h2>
+            <div class="scroll_btn_container">
+              <button id="gr_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="gr_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="gr_dest" class="dest-container"></div>
+        </div>
+        <div class="country_container">
+          <div class="head_dest-container">
+            <h2>Germania</h2>
+            <div class="scroll_btn_container">
+              <button id="de_dest-next" class="bck-btn">
+                <img src="./img/arrow.png" />
+              </button>
+              <button id="de_dest-back" class="fwd-btn">
+                <img src="./img/arrow.png" />
+              </button>
+            </div>
+          </div>
+          <div id="de_dest" class="dest-container"></div>
+        </div>
+      </div>
+      <div class="about">
+        <h1>La tua gioia è la nostra soddisfazione!</h1>
+        <p>Se tu sei soddisfatto allora lo siamo anche noi.</p>
+        <div class="about__container">
+          <div class="about__left">
+            <div class="about_info">
+              <img src="./img/guarantee.png" alt="" />
+              <h2>Riponi in noi la tua fiducia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+                aut distinctio aspernatur delectus asperiores aperiam quis autem
+                quae quibusdam, voluptatem excepturi omnis magnam amet fugiat.
+              </p>
+              <button class="about-rm-btn">Read More</button>
+            </div>
+          </div>
+          <div class="about__right">
+            <div class="about_info">
+              <img src="./img/safe_travel.png" alt="" />
+              <h2>Viaggia in sicurezza</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum
+                aut distinctio aspernatur delectus asperiores aperiam quis autem
+                quae quibusdam, voluptatem excepturi omnis magnam amet fugiat.
+              </p>
+              <button class="about-rm-btn">Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="up_footer">
+        <div class="info">
+          <h2>Travel By Country</h2>
+          <p>Team Serivice</p>
+          <p>Contatti</p>
+        </div>
+        <div class="info">
+          <h2>About us</h2>
+          <p>Pricining</p>
+          <p>Sedi</p>
+        </div>
+        <div class="info">
+          <h2>Info & Contatti</h2>
+          <p>countrybytravel@gmail.com</p>
+          <div class="socials">
+            <a href="">
+              <img src="./img/facebook.png" alt="" srcset="" />
+            </a>
+            <a href="">
+              <img src="./img/instagram.png" alt="" srcset="" />
+            </a>
+            <a href="">
+              <img src="./img/twitter.png" alt="" srcset="" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="down_footer">
+        <p>PRIVACY POLICY</p>
+        <p>CBT ALL RIGHITS RESERVED, 2022</p>
+      </div>
+    </footer>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
