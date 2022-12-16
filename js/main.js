@@ -199,6 +199,9 @@ search_btnEl.addEventListener("click", (e) => {
         "Spiacenti la tua ricerca non ha prodotto risultati :(";
     else res_title.textContent = "Risultati della tua ricerca";
   }
+  result_container.scrollIntoView({
+    behavior: "smooth",
+  });
 });
 
 /**
